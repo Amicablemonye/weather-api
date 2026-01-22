@@ -2,7 +2,7 @@ import requests
 import datetime as dt
 
 API_KEY = open('api_key', 'r').read().strip()
-city = "Halifax"
+city = ""
 
 def get_weather(city):
     url = "http://api.openweathermap.org/data/2.5/weather"
@@ -32,6 +32,3 @@ def get_weather(city):
         ) + dt.timedelta(seconds=data['timezone'])
     ).strftime("%Y-%m-%d %H:%M")
 }
-
-weather = get_weather(city)
-print(weather)
